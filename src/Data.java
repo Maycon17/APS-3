@@ -3,6 +3,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class Data {
 	//Atributos da classe
 	private String data;
@@ -26,20 +28,14 @@ public class Data {
 		//variavel de controle para a validação
 		boolean val = true;
 		
-		//objeto e variavel para a solicitação dos dados
-		Scanner entrada = new Scanner (System.in);
-		String dat;
-		
 		//laço de repetição para efetuar a validação.
 		while(val)
 		{
 			//solicitando a data de lançamento da obra
-			System.out.println("Digite a data de lançamento da obra");
-			dat = entrada.nextLine();
 		
 			//formatação de data
 			Date data = null;
-			String dataTexto = new String(dat);
+			String dataTexto = new String(JOptionPane.showInputDialog(null, "Digite a data de lançamento da obra"));
 			SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 			
 			//capturando um erro na inserção de data
@@ -49,7 +45,7 @@ public class Data {
 		     	this.data = dataTexto;
 		     	val = false;
 			} catch (ParseException e) {
-		     	System.out.println("Data informada invalida.");
+				JOptionPane.showMessageDialog(null, "Data informada invalida.");
 			}
 		}
 	}

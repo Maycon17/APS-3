@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
 public class TCC extends Obras {
-	//Atributos da classe
-	private int paginas;
 	private String instituicao, curso;
 	
 	//Método construtor
@@ -11,15 +9,6 @@ public class TCC extends Obras {
 		super();
 		
 //===================================Solicitando para o usuário a entrada de dados===================================
-		
-		//Solicitando para o usuário o número de páginas da obra
-		Scanner entrada = new Scanner (System.in);
-		int pag;
-		
-		System.out.println("Digite o número de páginas que o TCC possuí:");
-		pag = entrada.nextInt();
-		this.paginas = pag;
-		
 		
 		//Solicitando para o usuário a instituição e o curso do TCC
 		Scanner entradaString = new Scanner (System.in);
@@ -37,16 +26,8 @@ public class TCC extends Obras {
 	
 	@Override
 	public String toString() {
-		return "O TCC " + getTitulo() + " com o tema "+ getGenero() + " possui " + paginas + " páginas. Foi escrito por " + getAutor() + 
+		return "O TCC " + getTitulo() + " com o tema "+ getGenero() + " possui " + getPaginas() + " páginas. Foi escrito por " + getAutor() + 
 				", para a instituicao "+ instituicao + " e lançado na em " + getData() + "para o curso de " + curso + ". /n Sintese: " + getSintese();
-	}
-
-	public int getPaginas() {
-		return paginas;
-	}
-
-	public void setPaginas(int paginas) {
-		this.paginas = paginas;
 	}
 
 	public String getInstituicao() {
