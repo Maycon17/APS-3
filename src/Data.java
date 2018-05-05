@@ -1,16 +1,16 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.swing.JOptionPane;
+import java.util.Scanner;
 
 public class Data {
 	//Atributos da classe
 	private String data;
 
 	//Método construtor
-	Data (String d)
+	Data ()
 	{		
-		setData(d);
+		setData();
 	}
 
 	@Override
@@ -22,20 +22,35 @@ public class Data {
 		return data;
 	}
 
-	public void setData(String d) {
+	public void setData() {
+		//variavel de controle para a validação
+		boolean val = true;
 		
-		//formatação de data
-		Date data = null;
-		String dataTexto = new String(d);
-		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		//objeto e variavel para a solicitação dos dados
+		Scanner entrada = new Scanner (System.in);
+		String dat;
 		
-		//capturando um erro na inserção de data
-		try {
-	     	format.setLenient(false);
-	     	data = format.parse(dataTexto);
-	     	this.data = dataTexto;
-		} catch (ParseException e) {
-		     	JOptionPane.showMessageDialog(null,"Data informada incorreta","AVISO",JOptionPane.WARNING_MESSAGE);
+		//laço de repetição para efetuar a validação.
+		while(val)
+		{
+			//solicitando a data de lançamento da obra
+			System.out.println("Digite a data de lançamento da obra");
+			dat = entrada.nextLine();
+		
+			//formatação de data
+			Date data = null;
+			String dataTexto = new String(dat);
+			SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+			
+			//capturando um erro na inserção de data
+			try {
+		     	format.setLenient(false);
+		     	data = format.parse(dataTexto);
+		     	this.data = dataTexto;
+		     	val = false;
+			} catch (ParseException e) {
+		     	System.out.println("Data informada invalida.");
+			}
 		}
 	}
 	

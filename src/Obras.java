@@ -11,7 +11,7 @@ public abstract class Obras {
 	{
 //==============================Criação dos objetos para a entrada de dados do usuário==============================
 		Scanner entradaString = new Scanner (System.in); 
-		String entrada [] = new String [6];		
+		String entrada [] = new String [5];		
 		
 //=============================Laço de repetição para solicitar os dados para o usuário ============================
 		for (int i = 0; i <= entrada.length; i ++)
@@ -52,16 +52,11 @@ public abstract class Obras {
 					entrada [i] = entradaString.nextLine();
 					this.sintese = entrada [i];
 					break;
-				
-				//solictando a data de lançamento da obra
-				case 5:
-					System.out.println("Digite a data de lançamento da obra");
-					entrada [i] = entradaString.nextLine();
-					this.data = new Data (entrada [i]);
-					break;
-					
 			}
 		}
+		
+		//chamando o método construtor da data para atribuir um estado para o atributo
+		data = new Data();
 	}
 	
 	public String getTitulo() {
