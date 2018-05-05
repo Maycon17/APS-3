@@ -1,78 +1,41 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JOptionPane;
 
 public class Data {
-	private int dia, mes, ano;
+	//Atributos da classe
+	private String data;
 
-	Data (int dia, int mes, int ano)
-	{
-		setAno(ano);
-		setMes(mes);
-		setDia(dia);
-	}
-	
-	public int getDia() {
-		return dia;
+	//Método construtor
+	Data (String d)
+	{		
+		setData(d);
 	}
 
-	public void setDia(int dia) {
+	@Override
+	public String toString() {
+		return data;
+	}
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String d) {
 		
-		if (ano % 4 == 0 || ano % 100 != 0 || ano % 400 == 0)
-		{
-			if (mes == 2)
-			{
-				if (dia >0 && dia <= 29)
-				{
-					this.dia = dia;
-				}
-			}
-		}
-		else
-		{
-			if (mes == 2)
-			{
-				if (dia >0 && dia <= 29)
-				{
-					this.dia = dia;
-				}
-			}
-			else if (mes == 8 || mes == 10 || mes == 12 || mes % 2 != 0)
-			{
-				if (dia > 0 && dia <= 31)
-				{
-					this.dia = dia;
-				}
-			}
-			else if (mes == 9 || mes == 11 || mes %2 == 0)
-			{
-				if (dia > 0 && dia <= 30)
-				{
-					this.dia = dia;
-				}
-			}
-		}
-	}
-
-	public int getMes() {
-		return mes;
-	}
-
-	public void setMes(int mes) {
+		//formatação de data
+		Date data = null;
+		String dataTexto = new String(d);
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 		
-		if (mes > 0 && mes <= 12)
-		{
-			this.mes = mes;
-		}
-		
-	}
-
-	public int getAno() {
-		return ano;
-	}
-
-	public void setAno(int ano) {
-		
-		if (ano <= 9999)
-		{
-			this.ano = ano;
+		//capturando um erro na inserção de data
+		try {
+	     	format.setLenient(false);
+	     	data = format.parse(dataTexto);
+	     	this.data = dataTexto;
+		} catch (ParseException e) {
+		     	JOptionPane.showMessageDialog(null,"Data informada incorreta","AVISO",JOptionPane.WARNING_MESSAGE);
 		}
 	}
 	

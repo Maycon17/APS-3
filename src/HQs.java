@@ -1,17 +1,27 @@
+import java.util.Scanner;
 
 public class HQs extends Obras {
+	//Atributos da classe
 	private int paginas;
 	
-	HQs (String titulo, String autor,int paginas, String editora, String genero, String sintese, Data data)
+	//Método construtor
+	HQs ()
 	{
-		super(titulo, autor, editora, sintese, genero, data);
-		this.paginas = paginas;
+		super();
+		
+		//Solicitando para o usuário o número de páginas da obra
+		Scanner entrada = new Scanner (System.in);
+		int pag;
+		
+		System.out.println("Digite o número de páginas que a HQ possuí:");
+		pag = entrada.nextInt();
+		this.paginas = pag;
 	}
 	
 	@Override
 	public String toString() {
 		return "A HQ " + getTitulo() + " de gênero "+ getGenero() +" possui " + paginas + " páginas. Foi escrito pelo autor " + getAutor() + 
-				", distribuido pela editora "+ getEditora() + " e lançado na em " + getData() + ". /n Sintese: " + getSintese();
+				", distribuido pela editora "+ getEditora() + " e lançado em " + getData() + ". /n Sintese: " + getSintese();
 	}
 	
 	public int getPaginas() {
@@ -21,6 +31,4 @@ public class HQs extends Obras {
 	public void setPaginas(int paginas) {
 		this.paginas = paginas;
 	}
-
-	
 }
