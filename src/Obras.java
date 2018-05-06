@@ -23,6 +23,11 @@ public abstract class Obras {
 		data = new Data();
 	}
 	
+	public void insert ()
+	{
+		
+	}
+	
 	public String getTitulo() {
 		return titulo;
 	}
