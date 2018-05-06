@@ -23,11 +23,6 @@ public abstract class Obras {
 		data = new Data();
 	}
 	
-	public void insert ()
-	{
-		
-	}
-	
 	public String getTitulo() {
 		return titulo;
 	}
@@ -83,8 +78,8 @@ public abstract class Obras {
 		
 		while(val)
 		{
-			//recebendo o número de páginas do livro como tipo string
-			String x = JOptionPane.showInputDialog(null, "Digite o número de páginas que o livro possuí");
+			//recebendo o número de páginas da obra como tipo string
+			String x = JOptionPane.showInputDialog(null, "Digite o número de páginas que a obra possuí");
 			
 			//Variavel de controle para saber quantas vezes ele detectou um caracter
 			int cont = 0;

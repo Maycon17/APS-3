@@ -35,7 +35,7 @@ public class Data {
 		
 			//formatação de data
 			Date data = null;
-			String dataTexto = new String(JOptionPane.showInputDialog(null, "Digite a data de lançamento da obra"));
+			String dataTexto = new String(JOptionPane.showInputDialog(null, "Digite a data de lançamento da obra (dd/MM/yyyy)"));
 			SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 			
 			//capturando um erro na inserção de data
