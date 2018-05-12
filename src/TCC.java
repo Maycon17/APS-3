@@ -23,7 +23,7 @@ public class TCC extends Obras {
 	}
 
 	public void setInstituicao() {
-		this.instituicao = JOptionPane.showInputDialog(null, "Digite o nome da innstituição que este TCC foi designado");
+		this.instituicao = validacao(JOptionPane.showInputDialog(null, "Digite o titulo da obra"), "instituicao");
 	}
 
 	public String getCurso() {
@@ -31,6 +31,6 @@ public class TCC extends Obras {
 	}
 
 	public void setCurso() {
-		this.curso = JOptionPane.showInputDialog(null, "Digite o curso que este TCC foi designado");
+		this.curso = validacao(JOptionPane.showInputDialog(null, "Digite o titulo da obra"), "curso");
 	}
 }

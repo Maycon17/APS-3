@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 import javax.swing.JOptionPane;
 
 public class Teste {
@@ -136,10 +134,11 @@ public class Teste {
 								+ "1 - Pelo seu título \n"
 								+ "2 - Pelo autor da obra \n"
 								+ "3 - Pelo genero da obra \n"
-								+ "4 - Para voltar \n");
+								+ "4 - Buscar todas as obras cadastradas"
+								+ "5 - Para voltar \n");
 						
 						//chamada da função de validação de opções
-						opcao = validacao(opcao, 4);
+						opcao = validacao(opcao, 5);
 						
 						switch(Integer.parseInt(opcao))
 						{
@@ -149,7 +148,7 @@ public class Teste {
 							
 							for(int i = 0; i < insert; i++)
 							{
-								if(escolha.equalsIgnoreCase(obra[i].getTitulo()))
+								if(obra[i] != null && escolha.equalsIgnoreCase(obra[i].getTitulo()))
 								{
 									texto += obra[i].toString() + "\n";
 								}
@@ -174,7 +173,7 @@ public class Teste {
 							
 							for(int i = 0; i < insert; i++)
 							{
-								if(escolha.equalsIgnoreCase(obra[i].getAutor()))
+								if(obra[i] != null && escolha.equalsIgnoreCase(obra[i].getAutor()))
 								{
 									texto += obra[i].toString() + "\n";
 								}
@@ -198,7 +197,7 @@ public class Teste {
 							
 							for(int i = 0; i < insert; i++)
 							{								
-								if(escolha.equalsIgnoreCase(obra[i].getGenero()))
+								if(obra[i] != null && escolha.equalsIgnoreCase(obra[i].getGenero()))
 								{
 									texto += obra[i].toString() + "\n";
 								}
@@ -215,18 +214,125 @@ public class Teste {
 							
 							texto = "";
 							break;
+							
+						case 4:
+							for(int i = 0; i < insert; i++)
+							{								
+								if(obra[i] != null)
+								{
+									texto += obra[i].toString() + "\n";
+								}
+							}
+							
+							if(texto != "")
+							{
+								JOptionPane.showMessageDialog(null, texto);
+							}
+							else
+							{
+								JOptionPane.showMessageDialog(null, "Não há obras cadastradas");
+							}
 						}
-					}while(Integer.parseInt(opcao) != 4);
+					}while(Integer.parseInt(opcao) != 5);
 					break;
 					
-//==============================================caso a opção seja de eliminar uma obra=====================================================
+//==============================================caso a opção seja de eliminar uma obra==============================================
 				case 3:
+					do{
+						opcao = JOptionPane.showInputDialog(null,"Escolha uma método de excluir uma obra já cadastrada?\n"
+								+ "1 - Pelo seu título \n"
+								+ "2 - Pelo autor da obra \n"
+								+ "3 - Pelo genero da obra \n"
+								+ "4 - Para eliminar todas as obras"
+								+ "5 - Para voltar \n");
+						
+						//chamada da função de validação de opções
+						opcao = validacao(opcao, 5);
+						
+						switch(Integer.parseInt(opcao))
+						{
+						//========================================Eliminado obras pelo seu titulo====================================
+						case 1:
+							escolha = JOptionPane.showInputDialog(null, "Digite o titulo que você quer eliminar.");
+							
+							for(int i = 0; i < insert; i++)
+							{
+								if(escolha.equalsIgnoreCase(obra[i].getTitulo()))
+								{
+									obra[i] = null;
+								}
+							}
+							
+							break;
+							
+						//========================================Eliminando obras pelo seu autor====================================
+						case 2:
+							escolha = JOptionPane.showInputDialog(null, "Digite o nome do autor pelo qual você quer eliminar");
+							
+							for(int i = 0; i < insert; i++)
+							{
+								if(escolha.equalsIgnoreCase(obra[i].getAutor()))
+								{
+									obra[i] = null;
+								}
+							}
+							
+							break;
+							
+						//========================================Eliminando obras pelo seu genero====================================
+						case 3:
+							escolha = JOptionPane.showInputDialog(null, "Digite o genero pelo qual você quer eliminar.");
+							
+							for(int i = 0; i < insert; i++)
+							{								
+								if(escolha.equalsIgnoreCase(obra[i].getGenero()))
+								{
+									obra[i] = null;
+								}
+							}
+							break;
+							
+						case 4:
+							for(int i = 0; i < insert; i++)
+							{								
+								if(obra[i] != null)
+								{
+									texto += obra[i].toString() + "\n";
+								}
+							}
+							
+							if(texto != "")
+							{
+								JOptionPane.showMessageDialog(null, texto);
+							}
+							else
+							{
+								JOptionPane.showMessageDialog(null, "Não há obras cadastradas");
+							}
+						}
+					}while(Integer.parseInt(opcao) != 5);
 					break;
 			}
 		}while(Integer.parseInt(opcao) != 0);
+		
+		/*Obras[] x = new Obras [2];
+		
+		x[0] = new Livro ();
+		
+		x[0] = null;
+		
+		if(x[0] == null)
+		{
+			System.out.println("null");
+		}
+		else
+		{
+			System.out.println("tem valor ainda");
+		}*/
+		
 	}
 	
-	//função de validação de opção escolhida
+//=============================================função de validação de opção escolhida===============================================
 	public static String validacao (String opcao, int max)
 	{
 		//validação se o dado informado pelo usuário é realmente um número
