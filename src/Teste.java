@@ -30,7 +30,7 @@ public class Teste {
 			//ação para cada opção escolhida
 			switch(Integer.parseInt(opcao))
 			{
-//======================================================caso a opção seja de inserir uma obra==============================================
+//======================================================caso a opção seja de inserir uma obra=======================================
 				case 1:
 					//laço para efetuar a escolha de ações
 					do
@@ -47,7 +47,7 @@ public class Teste {
 						
 						switch(Integer.parseInt(opcao))
 						{
-							//====================================caso a opção seja de inserir um livro===================================
+							//====================================caso a opção seja de inserir um livro=============================
 							case 1:
 								//verificando se o array encontra-se lotado
 								if(insert == obra.length)
@@ -73,7 +73,7 @@ public class Teste {
 								
 								break;
 								
-							//======================================caso a opção seja de inserir um HQ====================================
+							//======================================caso a opção seja de inserir um HQ==============================
 							case 2:
 								if(insert == obra.length)
 								{
@@ -95,7 +95,7 @@ public class Teste {
 								insert++;
 								break;
 							
-							//======================================caso a opção seja de inserir um TCC===================================
+							//======================================caso a opção seja de inserir um TCC=============================
 							case 3:
 								if(insert == obra.length)
 								{
@@ -313,23 +313,7 @@ public class Teste {
 					}while(Integer.parseInt(opcao) != 5);
 					break;
 			}
-		}while(Integer.parseInt(opcao) != 0);
-		
-		/*Obras[] x = new Obras [2];
-		
-		x[0] = new Livro ();
-		
-		x[0] = null;
-		
-		if(x[0] == null)
-		{
-			System.out.println("null");
-		}
-		else
-		{
-			System.out.println("tem valor ainda");
-		}*/
-		
+		}while(Integer.parseInt(opcao) != 0);		
 	}
 	
 //=============================================função de validação de opção escolhida===============================================
@@ -351,14 +335,3 @@ public class Teste {
 		return opcao;
 	}
 }
-
-//Exemplo de solicitação de dado por janela de interação
-//String nome = JOptionPane.showInputDialog(null, "Entre com o nome do produto");
-
-//Exemplo de solicitação de dado via console
-/*
- * Scanner entrada = new Scanner (System.in);
- * String dat;
- * System.out.println("Digite a data de lançamento da obra");
- * dat = entrada.nextLine();
- */
