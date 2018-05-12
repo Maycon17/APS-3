@@ -4,8 +4,6 @@ public class HQs extends Obras {
 	HQs ()
 	{
 		super();
-		
-		setPaginas();
 	}
 	
 	@Override

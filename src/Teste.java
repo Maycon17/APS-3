@@ -6,11 +6,15 @@ public class Teste {
 	
 	public static void main(String[] args) 
 	{
-		//instanciando a variavel para a escolha de ações
+		//instanciando as variaveis
 		String opcao;
+		int insert = 0;
 		
 		//instanciando o array de objetos para efetuar a inserção do usuário
-		Obras [] obra = new Obras [10];
+		Obras [] obra = new Obras [2];
+		
+		//instanciando um array auxiliar caso necessário
+		Obras [] aux = new Obras [0];
 		
 		//laço para efetuar a escolha de ações
 		do
@@ -28,6 +32,7 @@ public class Teste {
 			//ação para cada opção escolhida
 			switch(Integer.parseInt(opcao))
 			{
+				//caso a opção seja de inserir uma obra
 				case 1:
 					//laço para efetuar a escolha de ações
 					do
@@ -44,27 +49,84 @@ public class Teste {
 						
 						switch(Integer.parseInt(opcao))
 						{
-						case 1:
+							//caso a opção seja de inserir um livro
+							case 1:
+								//verificanso se o array encontra-se lotado
+								if(insert == obra.length)
+								{
+									//se estiver cheio o código irá alocar no array aux o tamanho atual do array obra
+									//e copiar o seu conteudo.
+									aux = new Obras [obra.length];
+									System.arraycopy(obra, 0, aux, 0, obra.length);
+									
+									//agora irá ser efetuado o aumento do array incrementando mais 10 posições
+									obra = new Obras [aux.length + 10];
+									System.arraycopy(aux, 0, obra, 0, aux.length);
+									
+									//incrementado mais um no insert para trocar a posição de gravação no array
+									insert++;
+								}
+								
+								obra[insert] = new Livro();
+								
+								insert++;
+								break;
+								
+							//caso a opção seja de inserir um HQ
+							case 2:
+								if(insert == obra.length)
+								{
+									//se estiver cheio o código irá alocar no array aux o tamanho atual do array obra
+									//e copiar o seu conteudo.
+									aux = new Obras [obra.length];
+									System.arraycopy(obra, 0, aux, 0, obra.length);
+									
+									//agora irá ser efetuado o aumento do array incrementando mais 10 posições
+									obra = new Obras [aux.length + 10];
+									System.arraycopy(aux, 0, obra, 0, aux.length);
+									
+									//incrementado mais um no insert para trocar a posição de gravação no array
+									insert++;
+								}
+	
+								obra[insert] = new HQs();
+								
+								insert++;
+								break;
 							
-							break;
-							
-						case 2:
-							
-							break;
-							
-						case 3:
-							
-							break;
+							//caso a opção seja de inserir um TCC
+							case 3:
+								if(insert == obra.length)
+								{
+									//se estiver cheio o código irá alocar no array aux o tamanho atual do array obra
+									//e copiar o seu conteudo.
+									aux = new Obras [obra.length];
+									System.arraycopy(obra, 0, aux, 0, obra.length);
+									
+									//agora irá ser efetuado o aumento do array incrementando mais 10 posições
+									obra = new Obras [aux.length + 10];
+									System.arraycopy(aux, 0, obra, 0, aux.length);
+									
+									//incrementado mais um no insert para trocar a posição de gravação no array
+									insert++;
+								}
+	
+								obra[insert] = new TCC();
+								
+								insert++;
+								break;
 						}
 						
 					}while(Integer.parseInt(opcao) != 4);
 					
 					break;
-					
+				
+				//caso a opção seja de buscar uma obra
 				case 2:
 					
 					break;
 					
+				//caso a opção seja de eliminar uma obra
 				case 3:
 					
 					break;
@@ -73,14 +135,14 @@ public class Teste {
 		
 		
 		
-		/*=========================================ÁREA DE TESTES============================================
-		 * obra[1] = new Livro();
+		//=========================================ÁREA DE TESTES============================================
+		/*obra[0] = new Livro();
 		
-		String teste = (String) obra[1].getTitulo();
+		String teste = obra[0].getTitulo();
 		
 		System.out.println(teste);
 		
-		if(teste == "a")
+		if(!(teste == "a"))
 		{
 			System.out.println("Deu certo");
 		}

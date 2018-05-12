@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class TCC extends Obras {
 	private String instituicao, curso;
 	
@@ -8,20 +10,8 @@ public class TCC extends Obras {
 	{
 		super();
 		
-//===================================Solicitando para o usuário a entrada de dados===================================
-		
-		//Solicitando para o usuário a instituição e o curso do TCC
-		Scanner entradaString = new Scanner (System.in);
-		String inst;
-		String course;
-		
-		System.out.println("Digite a instituição de ensino que foi destinado o TCC");
-		inst = entradaString.nextLine();
-		this.instituicao = inst;
-		
-		System.out.println("Digite o curso que o TCC foi destinado");
-		course = entradaString.nextLine();
-		this.curso = course;
+		setInstituicao();
+		setCurso();
 	}
 	
 	@Override
@@ -34,15 +24,15 @@ public class TCC extends Obras {
 		return instituicao;
 	}
 
-	public void setInstituicao(String instituicao) {
-		this.instituicao = instituicao;
+	public void setInstituicao() {
+		this.instituicao = JOptionPane.showInputDialog(null, "Digite o nome da innstituição que este TCC foi designado");
 	}
 
 	public String getCurso() {
 		return curso;
 	}
 
-	public void setCurso(String curso) {
-		this.curso = curso;
+	public void setCurso() {
+		this.curso = JOptionPane.showInputDialog(null, "Digite o curso que este TCC foi designado");
 	}
 }
