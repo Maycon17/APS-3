@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 import javax.swing.JOptionPane;
 
 public class TCC extends Obras {
@@ -16,7 +14,7 @@ public class TCC extends Obras {
 	
 	@Override
 	public String toString() {
-		return "O TCC " + getTitulo() + " com o tema "+ getGenero() + " possui " + getPaginas() + " páginas. Foi escrito por " + getAutor() + 
+		return "O TCC com titulo " + getTitulo() + " de tema "+ getGenero() + " possui " + getPaginas() + " páginas. Foi escrito por " + getAutor() + 
 				", para a instituicao "+ instituicao + " e lançado na em " + getData() + "para o curso de " + curso + ". /n Sintese: " + getSintese();
 	}
 
