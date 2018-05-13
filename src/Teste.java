@@ -9,7 +9,7 @@ public class Teste {
 		int insert = 0;
 		
 		//instanciando o array de objetos para efetuar a inserção do usuário
-		Obras [] obra = new Obras [10];
+		Obras [] obra = new Obras [2];
 		
 		//instanciando um array auxiliar caso necessário
 		Obras [] aux = new Obras [0];
@@ -134,7 +134,7 @@ public class Teste {
 								+ "1 - Pelo seu título \n"
 								+ "2 - Pelo autor da obra \n"
 								+ "3 - Pelo genero da obra \n"
-								+ "4 - Buscar todas as obras cadastradas"
+								+ "4 - Buscar todas as obras cadastradas \n"
 								+ "5 - Para voltar \n");
 						
 						//chamada da função de validação de opções
@@ -232,6 +232,8 @@ public class Teste {
 							{
 								JOptionPane.showMessageDialog(null, "Não há obras cadastradas");
 							}
+							
+							texto = "";
 						}
 					}while(Integer.parseInt(opcao) != 5);
 					break;
@@ -243,7 +245,7 @@ public class Teste {
 								+ "1 - Pelo seu título \n"
 								+ "2 - Pelo autor da obra \n"
 								+ "3 - Pelo genero da obra \n"
-								+ "4 - Para eliminar todas as obras"
+								+ "4 - Para eliminar todas as obras \n"
 								+ "5 - Para voltar \n");
 						
 						//chamada da função de validação de opções
@@ -257,7 +259,7 @@ public class Teste {
 							
 							for(int i = 0; i < insert; i++)
 							{
-								if(escolha.equalsIgnoreCase(obra[i].getTitulo()))
+								if(obra[i] != null && escolha.equalsIgnoreCase(obra[i].getTitulo()))
 								{
 									obra[i] = null;
 								}
@@ -271,7 +273,7 @@ public class Teste {
 							
 							for(int i = 0; i < insert; i++)
 							{
-								if(escolha.equalsIgnoreCase(obra[i].getAutor()))
+								if(obra[i] != null && escolha.equalsIgnoreCase(obra[i].getAutor()))
 								{
 									obra[i] = null;
 								}
@@ -285,7 +287,7 @@ public class Teste {
 							
 							for(int i = 0; i < insert; i++)
 							{								
-								if(escolha.equalsIgnoreCase(obra[i].getGenero()))
+								if(obra[i] != null && escolha.equalsIgnoreCase(obra[i].getGenero()))
 								{
 									obra[i] = null;
 								}
@@ -297,18 +299,11 @@ public class Teste {
 							{								
 								if(obra[i] != null)
 								{
-									texto += obra[i].toString() + "\n";
+									obra[i] = null;
 								}
 							}
 							
-							if(texto != "")
-							{
-								JOptionPane.showMessageDialog(null, texto);
-							}
-							else
-							{
-								JOptionPane.showMessageDialog(null, "Não há obras cadastradas");
-							}
+							break;
 						}
 					}while(Integer.parseInt(opcao) != 5);
 					break;

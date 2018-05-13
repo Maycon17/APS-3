@@ -47,7 +47,7 @@ public abstract class Obras {
 	}
 
 	public void setAutor() {
-		this.autor = validacao(JOptionPane.showInputDialog(null, "Digite o titulo da obra"), "autor");
+		this.autor = validacao(JOptionPane.showInputDialog(null, "Digite o autor da obra"), "autor");
 	}
 
 	public String getEditora() {
@@ -55,7 +55,7 @@ public abstract class Obras {
 	}
 
 	public void setEditora() {
-		this.editora = validacao(JOptionPane.showInputDialog(null, "Digite o titulo da obra"), "editora");
+		this.editora = validacao(JOptionPane.showInputDialog(null, "Digite o editora da obra"), "editora");
 	}
 
 	public String getData() {
@@ -67,7 +67,7 @@ public abstract class Obras {
 	}
 
 	public void setGenero() {
-		this.genero = validacao(JOptionPane.showInputDialog(null, "Digite o titulo da obra"), "genero");
+		this.genero = validacao(JOptionPane.showInputDialog(null, "Digite o genero da obra"), "genero");
 	}
 
 	public String getSintese() {
@@ -75,7 +75,7 @@ public abstract class Obras {
 	}
 
 	public void setSintese() {
-		this.sintese = validacao(JOptionPane.showInputDialog(null, "Digite o titulo da obra"), "sintese");
+		this.sintese = validacao(JOptionPane.showInputDialog(null, "Digite o sintese da obra"), "sintese");
 	}
 
 	public int getPaginas() {
