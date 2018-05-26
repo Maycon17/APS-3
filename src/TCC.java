@@ -15,7 +15,7 @@ public class TCC extends Obras {
 	@Override
 	public String toString() {
 		return "O TCC com titulo " + getTitulo() + " de tema "+ getGenero() + " possui " + getPaginas() + " páginas. Foi escrito por " + getAutor() + 
-				", para a instituicao "+ instituicao + " e lançado na em " + getData() + "para o curso de " + curso + ". /n Sintese: " + getSintese();
+				", para a instituicao "+ instituicao + " e lançado na em " + getData() + "para o curso de " + curso + ". /n Síntese: " + getSintese();
 	}
 
 	public String getInstituicao() {
@@ -23,7 +23,7 @@ public class TCC extends Obras {
 	}
 
 	public void setInstituicao() {
-		this.instituicao = validacao(JOptionPane.showInputDialog(null, "Digite o titulo da obra"), "instituicao");
+		this.instituicao = validacao(JOptionPane.showInputDialog(null, "Digite o nome da instituição destinada do TCC"), "instituicao");
 	}
 
 	public String getCurso() {
@@ -31,6 +31,6 @@ public class TCC extends Obras {
 	}
 
 	public void setCurso() {
-		this.curso = validacao(JOptionPane.showInputDialog(null, "Digite o titulo da obra"), "curso");
+		this.curso = validacao(JOptionPane.showInputDialog(null, "Digite o curso a qual o TCC foi desenvolvido"), "curso");
 	}
 }

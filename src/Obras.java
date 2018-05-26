@@ -14,7 +14,6 @@ public abstract class Obras {
 		//chamada dos metodos de declaração de estados dos atributos
 		setTitulo();
 		setGenero();
-		setEditora();
 		setAutor();
 		setPaginas();
 		setSintese();
@@ -39,7 +38,7 @@ public abstract class Obras {
 	}
 
 	public void setTitulo() {				
-		this.titulo = validacao(JOptionPane.showInputDialog(null, "Digite o titulo da obra"), "titulo");
+		this.titulo = validacao(JOptionPane.showInputDialog(null, "Digite o título da obra"), "titulo");
 	}
 
 	public String getAutor() {
@@ -48,14 +47,6 @@ public abstract class Obras {
 
 	public void setAutor() {
 		this.autor = validacao(JOptionPane.showInputDialog(null, "Digite o autor da obra"), "autor");
-	}
-
-	public String getEditora() {
-		return editora;
-	}
-
-	public void setEditora() {
-		this.editora = validacao(JOptionPane.showInputDialog(null, "Digite o editora da obra"), "editora");
 	}
 
 	public String getData() {
@@ -67,7 +58,7 @@ public abstract class Obras {
 	}
 
 	public void setGenero() {
-		this.genero = validacao(JOptionPane.showInputDialog(null, "Digite o genero da obra"), "genero");
+		this.genero = validacao(JOptionPane.showInputDialog(null, "Digite o genêro da obra"), "genero");
 	}
 
 	public String getSintese() {
@@ -75,7 +66,7 @@ public abstract class Obras {
 	}
 
 	public void setSintese() {
-		this.sintese = validacao(JOptionPane.showInputDialog(null, "Digite o sintese da obra"), "sintese");
+		this.sintese = validacao(JOptionPane.showInputDialog(null, "Digite o síntese da obra"), "sintese");
 	}
 
 	public int getPaginas() {

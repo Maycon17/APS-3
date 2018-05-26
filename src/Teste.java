@@ -67,8 +67,6 @@ public class Teste {
 								
 								obra[insert] = new Livro();
 								
-								System.out.println(obra[insert]);
-								
 								insert++;
 								
 								break;
@@ -133,7 +131,7 @@ public class Teste {
 						opcao = JOptionPane.showInputDialog(null,"Escolha uma método de procurar por uma obra já cadastrada?\n"
 								+ "1 - Pelo seu título \n"
 								+ "2 - Pelo autor da obra \n"
-								+ "3 - Pelo genero da obra \n"
+								+ "3 - Pelo genêro da obra \n"
 								+ "4 - Buscar todas as obras cadastradas \n"
 								+ "5 - Para voltar \n");
 						
